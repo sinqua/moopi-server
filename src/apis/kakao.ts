@@ -12,17 +12,18 @@ export async function KakaoLogin(req: Request) {
         }
     })
         .then((response) => {
-            console.log("token authorization success", response.data);
+            console.log("token authorization success", );
             result = response.data;
 
         })
         .catch((error) => {
-            console.log("token authorization fail", error.data);
+            console.log("token authorization fail", );
             result = error.data;
         });
 
     return result;
 }
+
 
 export async function GetKakaoUserInfo(access_token: string) {
     let result;
@@ -33,11 +34,11 @@ export async function GetKakaoUserInfo(access_token: string) {
         }
     })
         .then((response) => {
-            console.log("get information success", response.data);
+            console.log("get information success", );
             result = response.data
         })
         .catch((error) => {
-            console.log("get information fail", error.data);
+            console.log("get information fail", );
             result = error.data;
         });
 

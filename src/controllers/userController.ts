@@ -226,8 +226,6 @@ export async function InsertTwitterUserInfo(userId: number, twitterUserInfo: any
 export async function InsertKakaoUserInfo(userId: number, kakaoUserInfo: any) {
     const DB = await connectDB.getConnection();
 
-    console.log(kakaoUserInfo);
-
     let query = `INSERT INTO user_kakao (user_id, id, name, email, age_range, birthyear, birthday, gender) VALUES (${userId}, '${kakaoUserInfo.id}', '${kakaoUserInfo.properties.nickname}', '${kakaoUserInfo.kakao_account.email}', '${kakaoUserInfo.kakao_account.age_range}', '${kakaoUserInfo.kakao_account.birthyear}', '${kakaoUserInfo.kakao_account.birthday}', '${kakaoUserInfo.kakao_account.gender}');`;
 
     await DB.query(query);
